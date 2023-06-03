@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@flagbase/js-client-sdk": "^0.0.6"
+  }
+}

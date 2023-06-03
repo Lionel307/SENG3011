@@ -1,0 +1,45 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    listLocations(name:String!): LocationResult!
+}
+
+type Mutation {
+    createWeather(location:String!, hours:Int!): WeathersResult!
+    createWind(location:String!): WindResult!
+}
+
+type Weather {
+    id: String!,
+    location: String!,
+    date: String!,
+    time: String!,
+    temperature: Float!,
+    apparent_temp: Float!,
+    dew_point: Float!,
+    relative_humidity: Int!,
+    wind_direction: String!,
+    wind_speed: Int!,
+    rain: Float!
+}
+
+type LocationResult {
+    success: Boolean!
+    errors: [String]
+    locations: [String]
+}
+
+type WeathersResult {
+    success: Boolean!
+    errors: [String]
+    weathers: [Weather]
+    data_model: String
+}
+type WindResult {
+    success: Boolean!
+    errors: [String]
+    wind_efficiency: String
+}
